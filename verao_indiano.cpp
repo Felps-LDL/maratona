@@ -14,26 +14,24 @@
 using namespace std;
 
 int N;
-string ans, temp;
+set<string> ans;
 
 int main()
 {
     optimize;
     
     cin >> N;
-    cin >> ans;
+    cin.ignore();
 
-    for(int i = 0; i < N - 1; i++)
+    for(int i = 0; i < N; i++)
     {
-        cin >> temp;
+        string temp;
+        getline(cin, temp);
 
-        for(int j = 0; j < temp.size(); j++)
-        {
-            if(temp[j] != '.') ans[j] = temp[j];
-        }
+        ans.insert(temp);
     }
 
-    cout << ans << endl;
+    cout << ans.size() << endl;
     
     return 0;
 }
