@@ -13,13 +13,27 @@
  
 using namespace std;
 
-
+int N;
+string ans, temp;
 
 int main()
 {
     optimize;
     
-    
+    cin >> N;
+    cin >> ans;
+
+    for(int i = 0; i < N - 1; i++)
+    {
+        cin >> temp;
+
+        for(int j = 0; j < temp.size(); j++)
+        {
+            if(temp[j] != '.') ans[j] = temp[j];
+        }
+    }
+
+    cout << ans << endl;
     
     return 0;
 }
